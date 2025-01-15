@@ -319,6 +319,7 @@ def requirements_met(requirements_file):
 
 
 def prepare_environment():
+    args.skip_torch_cuda_test = True
     torch_index_url = os.environ.get('TORCH_INDEX_URL', "https://download.pytorch.org/whl/cu118")
     torch_command = os.environ.get('TORCH_COMMAND', f"pip install torch==2.0.1 torchvision==0.15.2 --extra-index-url {torch_index_url}")
     if args.use_ipex:
